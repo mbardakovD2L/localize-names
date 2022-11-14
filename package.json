@@ -1,0 +1,23 @@
+{
+  "name": "localize-names",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Localize order of Given Name, Surname, Prefixes, Suffixes, etc.",
+  "main": "src/localize-names.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/unit-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbardakovD2L/localize-names.git"
+  },
+  "author": "mbardakovD2L",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/mbardakovD2L/localize-names/issues"
+  },
+  "homepage": "https://github.com/mbardakovD2L/localize-names#readme"
+}
