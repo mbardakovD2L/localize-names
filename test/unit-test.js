@@ -1,16 +1,27 @@
 import { localizeName } from '../src/localize-names.js';
 
-const testName = {
-    prefix: 'Dr.',
-    givenName: 'Harry',
-    middleName: 'Pepper',
-    lastName: 'Ham',
-    suffix: 'PhD',
-    nickname: 'Stinky Man'
+
+const runTest = (nameBlob, locale, expected) => {
+	const resultName = localizeName(nameBlob, locale);
+	if (resultName !== expected) {
+		console.error(`TEST FAILED: expected ${expected}, got ${resultName}`);
+	}
 }
 
-const expectedName = 'Dr. Harry Pepper "Stinky Man" Ham, PhD'
-const resultName = localizeName(testName, 'en');
-if (expectedName !== resultName) {
-    console.error('TEST FAILED: expected ', expectedName, ', found: ', resultName);
-}
+runTest({
+	prefix: 'Mr.',
+	givenName: 'Jonathan',
+	middleName: 'Maple',
+	lastName: 'Appleseed',
+	suffix: 'Esq.',
+	nickname: 'Johnny' }, 
+	'en', 
+	'Mr. Jonathan Maple "Johnny" Appleseed, Esq.');
+
+runTest({
+	prefix: 'Dr.',
+	givenName: 'Harry',
+	lastName: 'Ham',
+	suffix: 'PhD',}, 
+	'en', 
+	'Dr. Harry Ham, PhD');
