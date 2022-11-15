@@ -1,5 +1,5 @@
-const givenFirst = [ 'prefix', 'givenName', 'middleName', 'nickname', 'lastName', 'suffix' ];
-const surnameFirst = [ 'prefix', 'lastName', 'givenName', 'middleName', 'nickname', 'suffix' ];
+const givenFirst = [ 'prefix', 'givenName', 'middleName', 'nickname', 'surname', 'suffix' ];
+const surnameFirst = [ 'prefix', 'surname', 'givenName', 'middleName', 'nickname', 'suffix' ];
 
 const fieldsOrderMap = {
 	'en': givenFirst,
@@ -18,12 +18,12 @@ const fieldsOrderMap = {
 const localizeName = (nameBlob, locale) => {
 	return fieldsOrderMap[locale]
 		.filter(locale => nameBlob[locale])
-		.map(field => helper(nameBlob, field, locale))
+		.map(field => processNamePart(nameBlob, field, locale))
 		.join(' ').replace(' , ', ', ');
 	// the last post-pocessing call might only be applicable in en, other languages may have other grammar rules
 }
 
-const helper = (nameBlob, nameSubcomponent, locale) => {
+const processNamePart = (nameBlob, nameSubcomponent, locale) => {
 	switch (locale) {
 		case 'en':
 			switch (nameSubcomponent) {
