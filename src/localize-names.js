@@ -1,7 +1,5 @@
 const fieldsOrderMap = {
-	'en': [
-		'prefix', 'givenName', 'middleName', 'nickname', 'lastName', 'suffix'
-	]
+	'en': [ 'prefix', 'givenName', 'middleName', 'nickname', 'lastName', 'suffix' ]
 }
 
 const localizeName = (nameBlob, locale) => {
