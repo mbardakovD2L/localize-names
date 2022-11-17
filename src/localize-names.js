@@ -2,11 +2,11 @@ const givenFirst = [ 'prefix', 'givenName', 'middleName', 'nickname', 'surname',
 const surnameFirst = [ 'prefix', 'surname', 'givenName', 'middleName', 'nickname', 'suffix' ];
 
 const fieldsOrderMap = (locale) => {
-	switch (locale){
-		case 'ja': return surnameFirst;
-		case 'ko': return surnameFirst;
-		case 'vi': return surnameFirst;
-		case 'yue': return surnameFirst;
+	switch (locale) {
+		case 'ja':
+		case 'ko':
+		case 'vi':
+		case 'yue':
 		case 'zh': return surnameFirst;
 		default: return givenFirst;
 	}
@@ -39,6 +39,8 @@ const processNamePart = (nameBlob, nameSubcomponent, locale) => {
 
 const postProcessName = (nameArray, locale) => {
 	switch (locale) {
+		case 'ja':
+		case 'ko':
 		case 'zh':
 			return nameArray.join('');
 		default:

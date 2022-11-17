@@ -22,6 +22,13 @@ const harry = {
 	givenName: 'Harry',
 	surname: 'Ham',
 	suffix: 'PhD'
+};
+
+const harryScrambled = {
+	suffix: 'PhD',
+	surname: 'Ham',
+	prefix: 'Dr.',
+	givenName: 'Harry',
 }
 
 const anton = {
@@ -31,8 +38,13 @@ const anton = {
 }
 
 const firstLastZH = {
-	givenName: '俊年',
-	surname: '陈'
+	givenName: '明',
+	surname: '张'
+}
+
+const lastFirstZH = {
+	surname: '李',
+	givenName: '华'
 }
 
 runTest('full English name', johnnyAppleseed, 'en', 
@@ -41,8 +53,14 @@ runTest('full English name', johnnyAppleseed, 'en',
 runTest('partial (prefix, given, sur, suffix) English name', harry, 'en', 
 	'Dr. Harry Ham, PhD');
 
+runTest('partial (prefix, given, sur, suffix) English name; not ordered by default', harryScrambled, 'en', 
+	'Dr. Harry Ham, PhD');
+
 runTest('short (given, sur, nickname) English name', anton, 'en', 
 	'Anton "Well, as always: it depends" Bazhal');
 
 runTest('short (given, sur) Chinese name', firstLastZH, 'zh',
-	'陈俊年')
+	'张明');
+
+runTest('short (sur, given) Chinese name', lastFirstZH, 'zh',
+	'李华');
