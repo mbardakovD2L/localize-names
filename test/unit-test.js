@@ -20,9 +20,9 @@ const fullEN = {
 	middleName: 'Maple',
 	surname: 'Appleseed',
 	suffix: 'Esq.',
-	nickname: 'Johnny' 
+	nickname: 'Johnny'
 };
-runTest('full English name', fullEN, 'en','Mr. Jonathan Maple "Johnny" Appleseed, Esq.');
+runTest('full English name', fullEN, 'en-us', 'Mr. Jonathan Maple "Johnny" Appleseed, Esq.');
 
 const harry = {
 	prefix: 'Dr.',
@@ -30,7 +30,7 @@ const harry = {
 	surname: 'Ham',
 	suffix: 'PhD'
 };
-runTest('partial (prefix, given, sur, suffix) English name', harry, 'en', 'Dr. Harry Ham, PhD');
+runTest('partial (prefix, given, sur, suffix) English name', harry, 'en-us', 'Dr. Harry Ham, PhD');
 
 
 const harryScrambled = {
@@ -39,54 +39,54 @@ const harryScrambled = {
 	prefix: 'Dr.',
 	givenName: 'Harry',
 }
-runTest('partial (prefix, given, sur, suffix) English name; not ordered by default', harryScrambled, 'en', 'Dr. Harry Ham, PhD');
+runTest('partial (prefix, given, sur, suffix) English name; not ordered by default', harryScrambled, 'en-us', 'Dr. Harry Ham, PhD');
 
 const anton = {
 	givenName: 'Anton',
 	surname: 'Bazhal',
 	nickname: 'Well, as always: it depends',
 }
-runTest('short (given, sur, nickname) English name', anton, 'en', 'Anton "Well, as always: it depends" Bazhal');
+runTest('short (given, sur, nickname) English name', anton, 'en-us', 'Anton "Well, as always: it depends" Bazhal');
 
 const firstLastZH = {
 	givenName: '明',
 	surname: '张'
 }
-runTest('short (given, sur) Chinese name', firstLastZH, 'zh', '张明');
+runTest('short (given, sur) Chinese name', firstLastZH, 'zh-cn', '张明');
 
 const lastFirstZH = {
 	surname: '李',
 	givenName: '华'
 }
-runTest('short (sur, given) Chinese name', lastFirstZH, 'zh', '李华');
+runTest('short (sur, given) Chinese name', lastFirstZH, 'zh-cn', '李华');
 
 const firstLastFR = {
-	givenName: 'Jean',
+	givenName: 'Anne',
 	surname: 'Dupont'
 }
-runTest('short (given, sur) French name', firstLastFR, 'fr', 'Jean Dupont');
+runTest('short (given, sur) French name', firstLastFR, 'fr-fr', 'Anne Dupont');
 
 const lastFirstMiddleDE = {
 	surname: 'Mustermann',
 	givenName: 'Erika',
 	middleName: 'Anna'
 }
-runTest('short (sur, given, middle) German name', lastFirstMiddleDE, 'de', 'Erika Anna Mustermann');
+runTest('short (sur, given, middle) German name', lastFirstMiddleDE, 'de-de', 'Erika Anna Mustermann');
 
 const firstLastJP = {
-	givenName: '太郎',
+	givenName: '花子',
 	surname: '山田'
 }
-runTest('short (given, sur) Japanese name', firstLastJP, 'jp', '山田太郎');
+runTest('short (given, sur) Japanese name', firstLastJP, 'ja-jp', '山田花子');
 
 const lastFirstKO = {
 	surname: '홍',
 	givenName: '길동'
 }
-runTest('short (sur, given) Korean name', lastFirstKO, 'ko', '홍길동');
+runTest('short (sur, given) Korean name', lastFirstKO, 'ko-kr', '홍길동');
 
 const firstLastHI = {
 	givenName: 'ललित',
 	surname: 'भारती'
 }
-runTest('short (sur, given) Hindi name', firstLastHI, 'hi', 'ललित भारती');
+runTest('short (sur, given) Hindi name', firstLastHI, 'hi-in', 'ललित भारती');
