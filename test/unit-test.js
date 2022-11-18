@@ -84,3 +84,9 @@ const lastFirstKO = {
 	givenName: '길동'
 }
 runTest('short (sur, given) Korean name', lastFirstKO, 'ko', '홍길동');
+
+const firstLastHI = {
+	givenName: 'ललित',
+	surname: 'भारती'
+}
+runTest('short (sur, given) Hindi name', firstLastHI, 'hi', 'ललित भारती');
