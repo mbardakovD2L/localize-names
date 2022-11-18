@@ -24,7 +24,7 @@ const localizeName = (nameBlob, locale) => {
 
 const processNamePart = (nameBlob, nameSubcomponent, locale) => {
 	switch (locale) {
-		default:
+		case 'en':
 			switch (nameSubcomponent) {
 				case 'nickname':
 					return `"${nameBlob.nickname}"`;
@@ -34,6 +34,8 @@ const processNamePart = (nameBlob, nameSubcomponent, locale) => {
 				default:
 					return nameBlob[nameSubcomponent];
 			}
+		default:
+			return nameBlob[nameSubcomponent];
 	}
 }
 

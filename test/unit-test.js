@@ -1,14 +1,20 @@
 import { localizeName } from '../src/localize-names.js';
 
+const verbose = process.argv.find(arg => arg === '-v' || arg === '--verbose');
 
 const runTest = (testName, nameBlob, locale, expected) => {
+	if (!testName || !nameBlob || !locale || !expected) {
+		return;
+	}
 	const resultName = localizeName(nameBlob, locale);
 	if (resultName !== expected) {
-		console.error(`TEST ${testName} FAILED\nexpected:\n${expected}\ngot:\n${resultName}`);
+		console.error(`TEST ${testName} FAILED\nexpected:\n${expected}\ngot:\n${resultName}\n`);
+	} else if (verbose) {
+		console.log(`TEST ${testName} PASSED\nresult:\n${resultName}\n`);
 	}
 }
 
-const johnnyAppleseed = {
+const fullEN = {
 	prefix: 'Mr.',
 	givenName: 'Jonathan',
 	middleName: 'Maple',
@@ -16,6 +22,7 @@ const johnnyAppleseed = {
 	suffix: 'Esq.',
 	nickname: 'Johnny' 
 };
+runTest('full English name', fullEN, 'en','Mr. Jonathan Maple "Johnny" Appleseed, Esq.');
 
 const harry = {
 	prefix: 'Dr.',
@@ -23,6 +30,8 @@ const harry = {
 	surname: 'Ham',
 	suffix: 'PhD'
 };
+runTest('partial (prefix, given, sur, suffix) English name', harry, 'en', 'Dr. Harry Ham, PhD');
+
 
 const harryScrambled = {
 	suffix: 'PhD',
@@ -30,6 +39,7 @@ const harryScrambled = {
 	prefix: 'Dr.',
 	givenName: 'Harry',
 }
+runTest('partial (prefix, given, sur, suffix) English name; not ordered by default', harryScrambled, 'en', 'Dr. Harry Ham, PhD');
 
 const anton = {
 	givenName: 'Anton',
@@ -37,30 +47,36 @@ const anton = {
 	nickname: 'Well, as always: it depends',
 }
 
+runTest('short (given, sur, nickname) English name', anton, 'en', 'Anton "Well, as always: it depends" Bazhal');
+
 const firstLastZH = {
 	givenName: '明',
 	surname: '张'
 }
+runTest('short (given, sur) Chinese name', firstLastZH, 'zh', '张明');
 
 const lastFirstZH = {
 	surname: '李',
 	givenName: '华'
 }
+runTest('short (sur, given) Chinese name', lastFirstZH, 'zh', '李华');
 
-runTest('full English name', johnnyAppleseed, 'en', 
-	'Mr. Jonathan Maple "Johnny" Appleseed, Esq.');
+const firstLastFR = {
+	givenName: 'Jean',
+	surname: 'Dupont'
+}
+runTest('short (given, sur) French name', firstLastFR, 'fr', 'Jean Dupont');
+// currently, 'fr' is not a locale with its own explicit rules, so it defaults to the same rules as 'en'
 
-runTest('partial (prefix, given, sur, suffix) English name', harry, 'en', 
-	'Dr. Harry Ham, PhD');
+const lastFirstMiddleDE = {
+	surname: 'Mustermann',
+	givenName: 'Erika',
+	middleName: 'Anna'
+}
+runTest('short (sur, given, middle) German name', lastFirstMiddleDE, 'de', 'Erika Anna Mustermann');
 
-runTest('partial (prefix, given, sur, suffix) English name; not ordered by default', harryScrambled, 'en', 
-	'Dr. Harry Ham, PhD');
-
-runTest('short (given, sur, nickname) English name', anton, 'en', 
-	'Anton "Well, as always: it depends" Bazhal');
-
-runTest('short (given, sur) Chinese name', firstLastZH, 'zh',
-	'张明');
-
-runTest('short (sur, given) Chinese name', lastFirstZH, 'zh',
-	'李华');
+const firstLastJP = {
+	givenName: '太郎',
+	surname: '山田'
+}
+runTest('short (given, sur) Japanese name', firstLastJP, 'jp', '山田太郎');
