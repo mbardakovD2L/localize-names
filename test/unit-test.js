@@ -46,7 +46,6 @@ const anton = {
 	surname: 'Bazhal',
 	nickname: 'Well, as always: it depends',
 }
-
 runTest('short (given, sur, nickname) English name', anton, 'en', 'Anton "Well, as always: it depends" Bazhal');
 
 const firstLastZH = {
@@ -66,7 +65,6 @@ const firstLastFR = {
 	surname: 'Dupont'
 }
 runTest('short (given, sur) French name', firstLastFR, 'fr', 'Jean Dupont');
-// currently, 'fr' is not a locale with its own explicit rules, so it defaults to the same rules as 'en'
 
 const lastFirstMiddleDE = {
 	surname: 'Mustermann',
@@ -80,3 +78,9 @@ const firstLastJP = {
 	surname: '山田'
 }
 runTest('short (given, sur) Japanese name', firstLastJP, 'jp', '山田太郎');
+
+const lastFirstKO = {
+	surname: '홍',
+	givenName: '길동'
+}
+runTest('short (sur, given) Korean name', lastFirstKO, 'ko', '홍길동');

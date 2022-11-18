@@ -3,7 +3,7 @@ const surnameFirst = [ 'prefix', 'surname', 'givenName', 'middleName', 'nickname
 
 const fieldsOrderMap = (locale) => {
 	switch (locale) {
-		case 'ja':
+		case 'jp':
 		case 'ko':
 		case 'vi':
 		case 'yue':
@@ -41,7 +41,7 @@ const processNamePart = (nameBlob, nameSubcomponent, locale) => {
 
 const postProcessName = (nameArray, locale) => {
 	switch (locale) {
-		case 'ja':
+		case 'jp':
 		case 'ko':
 		case 'zh':
 			return nameArray.join('');
