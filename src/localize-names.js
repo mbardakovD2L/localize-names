@@ -12,7 +12,7 @@ const locales = ['ar-sa',
 	'hi-in', //
 	'ja-jp', //
 	'ko-kr', //
-	'nl-nl',
+	'nl-nl', //
 	'pt-br',
 	'sv-se',
 	'tr-tr',
@@ -45,6 +45,11 @@ const processNamePart = (nameBlob, nameSubcomponent, locale) => {
 		case 'da-dk':
 		case 'de-de':
 		case 'en-us':
+		case 'es-es':
+		case 'es-mx':
+		case 'fr-ca':
+		case 'fr-fr':
+		case 'nl-nl':
 			switch (nameSubcomponent) {
 				case 'nickname':
 					return `"${nameBlob.nickname}"`;

@@ -95,32 +95,39 @@ runTest('fr-fr, Prefix Given Middle Sur', {
 	surname: 'de la Fontaine Barbier Thiefin'
 }, 'fr-fr', 'Pr Marie-Amélie Anne-Laure de la Fontaine Barbier Thiefin');
 
-runTest('Hindi name, Given Sur', {
+runTest('hi-in, Given Sur', {
 	givenName: 'ललित',
 	surname: 'भारती'
 }, 'hi-in', 'ललित भारती');
 
-runTest('Japanese name, Given Sur', {
+runTest('ja-jp, Given Sur', {
 	givenName: '花子',
 	surname: '山田'
 }, 'ja-jp', '山田花子');
 
-runTest('Korean name, Sur Given', {
+runTest('ko-kr, Sur Given', {
 	surname: '홍',
 	givenName: '길동'
 }, 'ko-kr', '홍길동');
 
-runTest('Chinese name, Given Sur', {
+runTest('nl-nl, Given Surname Suffix', {
+	givenName: 'Ingrid',
+	middleName: 'Francina Zoë',
+	surname: 'van den Berg Wolff Metternich',
+	suffix: 'PhD'
+}, 'nl-nl', 'Ingrid Francina Zoë van den Berg Wolff Metternich, PhD');
+
+runTest('zh-cn, Given Sur', {
 	givenName: '明',
 	surname: '张'
 }, 'zh-cn', '张明');
 
-runTest('Chinese name, Sur Given', {
+runTest('zh-cn, Sur Given', {
 	surname: '李',
 	givenName: '华'
 }, 'zh-cn', '李华');
 
-runTest('Chinese name, Prefix Sur', {
+runTest('zh-cn, Prefix Sur', {
 	surname: '王',
 	prefix: '老师'
 }, 'zh-cn', '王老师');
