@@ -14,6 +14,33 @@ const runTest = (testName, nameBlob, locale, expected) => {
 	}
 }
 
+runTest('Welsh name, Given Middle Sur', {
+	givenName: 'Eva',
+	middleName: 'Sophia',
+	surname: 'van der Wolf'
+}, 'cy-gb', 'Eva Sophia van der Wolf');
+
+runTest('Welsh name, Given Middle Sur Suffix', {
+	givenName: 'Hugh',
+	middleName: 'R.',
+	surname: 'Jones',
+	suffix: 'M.A., M.D.'
+}, 'cy-gb', 'Hugh R. Jones, M.A., M.D.');
+
+runTest('Danish name, Given Middle Sur Prefix Suffix', {
+	givenName: 'Sofie',
+	middleName: 'Amelie', 
+	surname: 'von Holstein',
+	prefix: 'Dr.',
+	suffix: 'Cand.med., Ph.d.'
+}, 'da-dk', 'Dr. Sofie Amelie von Holstein, Cand.med., Ph.d.');
+
+runTest('German name, Sur Given Middle', {
+	surname: 'Mustermann',
+	givenName: 'Erika',
+	middleName: 'Anna'
+}, 'de-de', 'Erika Anna Mustermann');
+
 runTest('English name, Prefix Given Middle Sur Suffix Nick', {
 	prefix: 'Mr.',
 	givenName: 'Jonathan',
@@ -43,6 +70,26 @@ runTest('English name, Given Sur Nick', {
 	nickname: 'Well, as always: it depends',
 }, 'en-us', 'Anton "Well, as always: it depends" Bazhal');
 
+runTest('French name, Given Sur', {
+	givenName: 'Anne',
+	surname: 'Dupont'
+}, 'fr-fr', 'Anne Dupont');
+
+runTest('Hindi name, Given Sur', {
+	givenName: 'ललित',
+	surname: 'भारती'
+}, 'hi-in', 'ललित भारती');
+
+runTest('Japanese name, Given Sur', {
+	givenName: '花子',
+	surname: '山田'
+}, 'ja-jp', '山田花子');
+
+runTest('Korean name, Sur Given', {
+	surname: '홍',
+	givenName: '길동'
+}, 'ko-kr', '홍길동');
+
 runTest('Chinese name, Given Sur', {
 	givenName: '明',
 	surname: '张'
@@ -57,50 +104,3 @@ runTest('Chinese name, Prefix Sur', {
 	surname: '王',
 	prefix: '老师'
 }, 'zh-cn', '王老师');
-
-runTest('French name, Given Sur', {
-	givenName: 'Anne',
-	surname: 'Dupont'
-}, 'fr-fr', 'Anne Dupont');
-
-runTest('German name, Sur Given Middle', {
-	surname: 'Mustermann',
-	givenName: 'Erika',
-	middleName: 'Anna'
-}, 'de-de', 'Erika Anna Mustermann');
-
-runTest('Japanese name, Given Sur', {
-	givenName: '花子',
-	surname: '山田'
-}, 'ja-jp', '山田花子');
-
-runTest('Korean name, Sur Given', {
-	surname: '홍',
-	givenName: '길동'
-}, 'ko-kr', '홍길동');
-
-runTest('Hindi name, Given Sur', {
-	givenName: 'ललित',
-	surname: 'भारती'
-}, 'hi-in', 'ललित भारती');
-
-runTest('Welsh name, Given Middle Sur', {
-	givenName: 'Eva',
-	middleName: 'Sophia',
-	surname: 'van der Wolf'
-}, 'cy-gb', 'Eva Sophia van der Wolf');
-
-runTest('Welsh name, Given Middle Sur Suffix', {
-	givenName: 'Hugh',
-	middleName: 'R.',
-	surname: 'Jones',
-	suffix: 'M.A., M.D.'
-}, 'cy-gb', 'Hugh R. Jones, M.A., M.D.');
-
-runTest('Danish name, Given Middle Sur Prefix Suffix', {
-	givenName: 'Sofie',
-	middleName: 'Amelie', 
-	surname: 'von Holstein',
-	prefix: 'Dr.',
-	suffix: 'Cand.med., Ph.d.'
-}, 'da-dk', 'Dr. Sofie Amelie von Holstein, Cand.med., Ph.d.');
