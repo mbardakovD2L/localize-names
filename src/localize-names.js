@@ -1,5 +1,5 @@
 const givenFirst = ['prefix', 'givenName', 'middleName', 'nickname', 'surname', 'suffix'];
-const surnameFirst = ['prefix', 'surname', 'givenName', 'middleName', 'nickname', 'suffix'];
+const surnameFirst = ['surname', 'givenName', 'middleName', 'prefix', 'nickname', 'suffix'];
 const locales = ['ar-sa',
 	'cy-gb',
 	'da-dk',
@@ -41,6 +41,9 @@ const localizeName = (nameBlob, locale) => {
 
 const processNamePart = (nameBlob, nameSubcomponent, locale) => {
 	switch (locale) {
+		case 'cy-gb':
+		case 'da-dk':
+		case 'de-de':
 		case 'en-us':
 			switch (nameSubcomponent) {
 				case 'nickname':
