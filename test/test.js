@@ -35,15 +35,14 @@ describe('localizeName', () => {
 	});
 
 	describe('en-us', () => {
-		it('prefix given middle sur suffix nick', () => {
+		it('prefix given middle sur suffix', () => {
 			equal(localizeName({
 				prefix: 'Mr.',
 				givenName: 'Jonathan',
 				middleName: 'Maple',
 				surname: 'Appleseed',
 				suffix: 'Esq.',
-				nickname: 'Johnny'
-			}, 'en-us'), 'Mr. Jonathan Maple "Johnny" Appleseed, Esq.');
+			}, 'en-us'), 'Mr. Jonathan Maple Appleseed, Esq.');
 		});
 
 		it('prefix given sur suffix', () => {
@@ -62,14 +61,6 @@ describe('localizeName', () => {
 				prefix: 'Dr.',
 				givenName: 'Harry',
 			}, 'en-us'), 'Dr. Harry Ham, PhD');
-		});
-
-		it('given sur nick', () => {
-			equal(localizeName({
-				givenName: 'Anton',
-				surname: 'Bazhal',
-				nickname: 'Well, as always: it depends',
-			}, 'en-us'), 'Anton "Well, as always: it depends" Bazhal');
 		});
 	});
 

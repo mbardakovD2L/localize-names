@@ -1,5 +1,5 @@
-const givenFirst = ['prefix', 'givenName', 'middleName', 'nickname', 'surname', 'suffix'];
-const surnameFirst = ['surname', 'givenName', 'middleName', 'prefix', 'nickname', 'suffix'];
+const givenFirst = ['prefix', 'givenName', 'middleName', 'surname', 'suffix'];
+const surnameFirst = ['surname', 'givenName', 'middleName', 'prefix', 'suffix'];
 const locales = ['ar-sa',
 	'cy-gb',
 	'da-dk',
@@ -54,8 +54,6 @@ const processNamePart = (nameBlob, nameSubcomponent, locale) => {
 		case 'sv-se':
 		case 'tr-tr':
 			switch (nameSubcomponent) {
-				case 'nickname':
-					return `"${nameBlob.nickname}"`;
 				case 'suffix':
 					return Object.keys(nameBlob).filter(part => fieldsOrderMap(locale).includes(part) && part !== 'suffix') ?
 						`, ${nameBlob.suffix}` : nameBlob.suffix;
