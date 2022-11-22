@@ -117,6 +117,30 @@ runTest('nl-nl, Given Surname Suffix', {
 	suffix: 'PhD'
 }, 'nl-nl', 'Ingrid Francina Zoë van den Berg Wolff Metternich, PhD');
 
+runTest('pt-br, Prefix Given Middle Surname Suffix', {
+	prefix: 'Prof. Dr.',
+	givenName: 'Maria Luiza',
+	middleName: 'Maria Eduarda',
+	surname: 'dos Santos Pereira Santos',
+	suffix: 'Dr. Ph.D'
+}, 'pt-br','Prof. Dr. Maria Luiza Maria Eduarda dos Santos Pereira Santos, Dr. Ph.D');
+
+runTest('sv-se, Prefix Given Middle Surname Suffix', {
+	prefix: 'Prof. dr.',
+	givenName: 'Ann-Christine',
+	middleName: 'Eva Sofia',
+	surname: 'van den Karlsson Beck Strand',
+	suffix: 'med. dr. fil. dr. jur. dr.',
+}, 'sv-se', 'Prof. dr. Ann-Christine Eva Sofia van den Karlsson Beck Strand, med. dr. fil. dr. jur. dr.');
+
+runTest('tr-tr, Prefix Given Middle Surname Suffix', {
+	prefix: 'Prof. Dr.',
+	givenName: 'Fatma',
+	middleName: 'Su',
+	surname: 'Demir Kaya',
+	suffix: 'M.D. Ph.D.',
+}, 'tr-tr', 'Prof. Dr. Fatma Su Demir Kaya, M.D. Ph.D.');
+
 runTest('zh-cn, Given Sur', {
 	givenName: '明',
 	surname: '张'
