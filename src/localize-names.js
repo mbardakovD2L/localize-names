@@ -1,22 +1,22 @@
 const givenFirst = ['prefix', 'givenName', 'middleName', 'nickname', 'surname', 'suffix'];
 const surnameFirst = ['surname', 'givenName', 'middleName', 'prefix', 'nickname', 'suffix'];
 const locales = ['ar-sa',
-	'cy-gb', //
-	'da-dk', //
-	'de-de', //
-	'en-us', //
-	'es-es', //
-	'es-mx', //
-	'fr-ca', //
-	'fr-fr', //
-	'hi-in', //
-	'ja-jp', //
-	'ko-kr', //
-	'nl-nl', //
-	'pt-br', //
-	'sv-se', //
-	'tr-tr', //
-	'zh-cn', //
+	'cy-gb',
+	'da-dk',
+	'de-de',
+	'en-us',
+	'es-es',
+	'es-mx',
+	'fr-ca',
+	'fr-fr',
+	'hi-in',
+	'ja-jp',
+	'ko-kr',
+	'nl-nl',
+	'pt-br',
+	'sv-se',
+	'tr-tr',
+	'zh-cn',
 	'zh-tw']
 
 const fieldsOrderMap = (locale) => {

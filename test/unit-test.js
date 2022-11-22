@@ -155,3 +155,8 @@ runTest('zh-cn, Prefix Sur', {
 	surname: '王',
 	prefix: '老师'
 }, 'zh-cn', '王老师');
+
+runTest('zh-tw, Given Sur', {
+	givenName: '文博',
+	surname: '石',
+}, 'zh-tw', '石文博');
