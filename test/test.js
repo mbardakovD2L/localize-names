@@ -1,4 +1,4 @@
-import { assert } from 'chai';
+import { expect } from 'chai';
 import { localizeName } from '../src/localize-names.js';
 
 describe('localizeName', () => {
@@ -11,7 +11,7 @@ describe('localizeName', () => {
 			}, 'cy-gb');
 			const expected = 'Eva Sophia van der Wolf';
 
-			assert.equal(result, expected);
+			expect(result).to.equal(expected);
 		});
 	});
 
@@ -26,7 +26,7 @@ describe('localizeName', () => {
 			}, 'da-dk');
 			const expected = 'Dr. Sofie Amelie von Holstein, Cand.med., Ph.d.';
 
-			assert.equal(result, expected);
+			expect(result).to.equal(expected);
 		});
 	});
 
@@ -39,7 +39,7 @@ describe('localizeName', () => {
 			}, 'de-de');
 			const expected = 'Erika Anna Mustermann';
 
-			assert.equal(result, expected);
+			expect(result).to.equal(expected);
 		});
 	});
 
@@ -54,7 +54,7 @@ describe('localizeName', () => {
 			}, 'en-us');
 			const expected = 'Mr. Jonathan Maple Appleseed, Esq.';
 
-			assert.equal(result, expected);
+			expect(result).to.equal(expected);
 		});
 
 		it('prefix givenName surName suffix', () => {
@@ -66,7 +66,7 @@ describe('localizeName', () => {
 			}, 'en-us');
 			const expected = 'Dr. Harry Ham, PhD';
 
-			assert.equal(result, expected);
+			expect(result).to.equal(expected);
 		});
 
 		it('suffix surName prefix givenName', () => {
@@ -78,7 +78,7 @@ describe('localizeName', () => {
 			}, 'en-us');
 			const expected = 'Dr. Harry Ham, PhD';
 
-			assert.equal(result, expected);
+			expect(result).to.equal(expected);
 		});
 	});
 
@@ -92,7 +92,7 @@ describe('localizeName', () => {
 			}, 'es-es');
 			const expected = 'Dra. María José Ana Belén del Río García Serrano';
 
-			assert.equal(result, expected);
+			expect(result).to.equal(expected);
 		});
 	});
 
@@ -104,7 +104,7 @@ describe('localizeName', () => {
 				middleName: 'María'
 			}, 'es-mx');
 			const expected = 'Rosa María Ruiz';
-			assert.equal(result, expected);
+			expect(result).to.equal(expected);
 		});
 	});
 
@@ -116,7 +116,7 @@ describe('localizeName', () => {
 			}, 'fr-ca');
 			const expected = 'Anne Dupont';
 
-			assert.equal(result, expected);
+			expect(result).to.equal(expected);
 		});
 	});
 
@@ -130,7 +130,7 @@ describe('localizeName', () => {
 			}, 'fr-fr');
 			const expected = 'Pr Marie-Amélie Anne-Laure de la Fontaine Barbier Thiefin';
 
-			assert.equal(result, expected);
+			expect(result).to.equal(expected);
 		});
 	});
 
@@ -142,7 +142,7 @@ describe('localizeName', () => {
 			}, 'hi-in');
 			const expected = 'ललित भारती';
 
-			assert.equal(result, expected);
+			expect(result).to.equal(expected);
 		});
 	});
 
@@ -154,7 +154,7 @@ describe('localizeName', () => {
 			}, 'ja-jp');
 			const expected = '山田花子';
 
-			assert.equal(result, expected);
+			expect(result).to.equal(expected);
 		});
 	});
 
@@ -166,7 +166,7 @@ describe('localizeName', () => {
 			}, 'ko-kr');
 			const expected = '홍길동';
 
-			assert.equal(result, expected);
+			expect(result).to.equal(expected);
 		});
 	});
 
@@ -180,7 +180,7 @@ describe('localizeName', () => {
 			}, 'nl-nl');
 			const expected = 'Ingrid Francina Zoë van den Berg Wolff Metternich, PhD';
 
-			assert.equal(result, expected);
+			expect(result).to.equal(expected);
 		});
 	});
 
@@ -195,7 +195,7 @@ describe('localizeName', () => {
 			}, 'pt-br');
 			const expected = 'Prof. Dr. Maria Luiza Maria Eduarda dos Santos Pereira Santos, Dr. Ph.D';
 
-			assert.equal(result, expected);
+			expect(result).to.equal(expected);
 		});
 	});
 
@@ -210,7 +210,7 @@ describe('localizeName', () => {
 			}, 'sv-se');
 			const expected = 'Prof. dr. Ann-Christine Eva Sofia van den Karlsson Beck Strand, med. dr. fil. dr. jur. dr.';
 
-			assert.equal(result, expected);
+			expect(result).to.equal(expected);
 		});
 	});
 
@@ -225,7 +225,7 @@ describe('localizeName', () => {
 			}, 'tr-tr');
 			const expected = 'Prof. Dr. Fatma Su Demir Kaya, M.D. Ph.D.';
 
-			assert.equal(result, expected);
+			expect(result).to.equal(expected);
 		});
 	});
 
@@ -237,7 +237,7 @@ describe('localizeName', () => {
 			}, 'zh-cn');
 			const expected = '张明';
 
-			assert.equal(result, expected);
+			expect(result).to.equal(expected);
 		});
 		it('surName givenName', () => {
 			const result = localizeName({
@@ -246,7 +246,7 @@ describe('localizeName', () => {
 			}, 'zh-cn');
 			const expected = '李华';
 
-			assert.equal(result, expected);
+			expect(result).to.equal(expected);
 		});
 		it('prefix surName', () => {
 			const result = localizeName({
@@ -255,7 +255,7 @@ describe('localizeName', () => {
 			}, 'zh-cn');
 			const expected = '王老师';
 
-			assert.equal(result, expected);
+			expect(result).to.equal(expected);
 		});
 	});
 
@@ -267,7 +267,7 @@ describe('localizeName', () => {
 			}, 'zh-tw');
 			const expected = '石文博';
 
-			assert.equal(result, expected);
+			expect(result).to.equal(expected);
 		});
 	});
 });
