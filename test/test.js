@@ -19,7 +19,7 @@ describe('localizeName', () => {
 		it('givenName middleName surName prefix suffix', () => {
 			const result = localizeName({
 				givenName: 'Sofie',
-				middleName: 'Amelie', 
+				middleName: 'Amelie',
 				surname: 'von Holstein',
 				prefix: 'Dr.',
 				suffix: 'Cand.med., Ph.d.'
@@ -29,7 +29,7 @@ describe('localizeName', () => {
 			assert.equal(result, expected);
 		});
 	});
-	
+
 	describe('de-de', () => {
 		it('surName givenName middleName', () => {
 			const result = localizeName({
