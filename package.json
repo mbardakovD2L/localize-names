@@ -22,5 +22,8 @@
   "homepage": "https://github.com/mbardakovD2L/localize-names#readme",
   "devDependencies": {
     "mocha": "^10.1.0"
+  },
+  "dependencies": {
+    "chai": "^4.3.7"
   }
 }
