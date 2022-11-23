@@ -3,7 +3,7 @@ import { localizeName } from '../src/localize-names.js';
 
 describe('localizeName', () => {
 	describe('cy-gb', () => {
-		it('given middle sur', () => {
+		it('givenName middleName surName', () => {
 			equal(localizeName({
 				givenName: 'Eva',
 				middleName: 'Sophia',
@@ -13,7 +13,7 @@ describe('localizeName', () => {
 	});
 
 	describe('da-dk', () => {
-		it('given middle sur prefix suffix', () => {
+		it('givenName middleName surName prefix suffix', () => {
 			equal(localizeName({
 				givenName: 'Sofie',
 				middleName: 'Amelie', 
@@ -25,7 +25,7 @@ describe('localizeName', () => {
 	});
 	
 	describe('de-de', () => {
-		it('sur given middle', () => {
+		it('surName givenName middleName', () => {
 			equal(localizeName({
 				surname: 'Mustermann',
 				givenName: 'Erika',
@@ -35,7 +35,7 @@ describe('localizeName', () => {
 	});
 
 	describe('en-us', () => {
-		it('prefix given middle sur suffix', () => {
+		it('prefix givenName middleName surName suffix', () => {
 			equal(localizeName({
 				prefix: 'Mr.',
 				givenName: 'Jonathan',
@@ -45,7 +45,7 @@ describe('localizeName', () => {
 			}, 'en-us'), 'Mr. Jonathan Maple Appleseed, Esq.');
 		});
 
-		it('prefix given sur suffix', () => {
+		it('prefix givenName surName suffix', () => {
 			equal(localizeName({
 				prefix: 'Dr.',
 				givenName: 'Harry',
@@ -54,7 +54,7 @@ describe('localizeName', () => {
 			}, 'en-us'), 'Dr. Harry Ham, PhD');
 		});
 
-		it('suffix sur prefix given', () => {
+		it('suffix surName prefix givenName', () => {
 			equal(localizeName({
 				suffix: 'PhD',
 				surname: 'Ham',
@@ -65,7 +65,7 @@ describe('localizeName', () => {
 	});
 
 	describe('es-es', () => {
-		it('given middle sur prefix', () => {
+		it('givenName middleName surName prefix', () => {
 			equal(localizeName({
 				givenName: 'María José',
 				middleName: 'Ana Belén',
@@ -76,7 +76,7 @@ describe('localizeName', () => {
 	});
 
 	describe('es-mx', () => {
-		it('sur given middle', () => {
+		it('surName givenName middleName', () => {
 			equal(localizeName({
 				surname: 'Ruiz',
 				givenName: 'Rosa',
@@ -86,7 +86,7 @@ describe('localizeName', () => {
 	});
 
 	describe('fr-ca', () => {
-		it('given sur', () => {
+		it('givenName surName', () => {
 			equal(localizeName({
 				givenName: 'Anne',
 				surname: 'Dupont'
@@ -95,7 +95,7 @@ describe('localizeName', () => {
 	});
 
 	describe('fr-fr', () => {
-		it('prefix given middle sur', () => {
+		it('prefix givenName middleName surName', () => {
 			equal(localizeName({
 				prefix: 'Pr',
 				givenName: 'Marie-Amélie',
@@ -106,7 +106,7 @@ describe('localizeName', () => {
 	});
 
 	describe('hi-in', () => {
-		it('given sur', () => {
+		it('givenName surName', () => {
 			equal(localizeName({
 				givenName: 'ललित',
 				surname: 'भारती'
@@ -115,7 +115,7 @@ describe('localizeName', () => {
 	});
 
 	describe('ja-jp', () => {
-		it('given sur', () => {
+		it('givenName surName', () => {
 			equal(localizeName({
 				givenName: '花子',
 				surname: '山田'
@@ -124,7 +124,7 @@ describe('localizeName', () => {
 	});
 
 	describe('ko-kr', () => {
-		it('sur given', () => {
+		it('surName givenName', () => {
 			equal(localizeName({
 				surname: '홍',
 				givenName: '길동'
@@ -133,7 +133,7 @@ describe('localizeName', () => {
 	});
 
 	describe('nl-nl', () => {
-		it('given middle surname suffix', () => {
+		it('givenName middleName surname suffix', () => {
 			equal(localizeName({
 				givenName: 'Ingrid',
 				middleName: 'Francina Zoë',
@@ -144,7 +144,7 @@ describe('localizeName', () => {
 	});
 
 	describe('pt-br', () => {
-		it('prefix given middle surname suffix', () => {
+		it('prefix givenName middleName surname suffix', () => {
 			equal(localizeName({
 				prefix: 'Prof. Dr.',
 				givenName: 'Maria Luiza',
@@ -156,7 +156,7 @@ describe('localizeName', () => {
 	});
 
 	describe('sv-se', () => {
-		it('prefix given middle surname suffix', () => {
+		it('prefix givenName middleName surname suffix', () => {
 			equal(localizeName({
 				prefix: 'Prof. dr.',
 				givenName: 'Ann-Christine',
@@ -168,7 +168,7 @@ describe('localizeName', () => {
 	});
 
 	describe('tr-tr', () => {
-		it('prefix given middle surname suffix', () => {
+		it('prefix givenName middleName surname suffix', () => {
 			equal(localizeName({
 				prefix: 'Prof. Dr.',
 				givenName: 'Fatma',
@@ -180,19 +180,19 @@ describe('localizeName', () => {
 	});
 
 	describe('zh-cn', () => {
-		it('given sur', () => {
+		it('givenName surName', () => {
 			equal(localizeName({
 				givenName: '明',
 				surname: '张'
 			}, 'zh-cn'), '张明');
 		});
-		it('sur given', () => {
+		it('surName givenName', () => {
 			equal(localizeName({
 				surname: '李',
 				givenName: '华'
 			}, 'zh-cn'), '李华');
 		});
-		it('prefix sur', () => {
+		it('prefix surName', () => {
 			equal(localizeName({
 				surname: '王',
 				prefix: '老师'
@@ -201,7 +201,7 @@ describe('localizeName', () => {
 	});
 
 	describe('zh-tw', () => {
-		it('given sur', () => {
+		it('givenName surName', () => {
 			equal(localizeName({
 				givenName: '文博',
 				surname: '石',
