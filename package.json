@@ -1,6 +1,6 @@
 {
   "name": "localize-names",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "Localize order of Given Name, Surname, Prefixes, Suffixes, etc.",
   "main": "src/localize-names.js",
