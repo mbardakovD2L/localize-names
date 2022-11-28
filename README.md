@@ -36,6 +36,8 @@ and the locale is one of:
 ```
 for example:
 ```js
+import { localizeName } from '@mbardakov/localize-names';
+
 console.log(localizeName({
     suffix: 'PhD',
     surname: 'Ham',
@@ -43,5 +45,13 @@ console.log(localizeName({
     givenName: 'Harry',
 }, 'en-us'));
 
-> 'Dr. Harry Ham, PhD';
+> 'Dr. Harry Ham, PhD'
+
+console.log(localizeName({
+    givenName: '明',
+    surname: '张'
+}, 'zh-cn'));
+
+> '张明'
+
 ```
