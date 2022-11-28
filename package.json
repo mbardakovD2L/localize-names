@@ -1,5 +1,5 @@
 {
-  "name": "localize-names",
+  "name": "@mbardakov/localize-names",
   "version": "1.0.1",
   "type": "module",
   "description": "Localize order of Given Name, Surname, Prefixes, Suffixes, etc.",
