@@ -19,6 +19,9 @@ and the locale is one of:
 'cy-gb',
 'da-dk',
 'de-de',
+'en',
+'en-ca',
+'en-gb',
 'en-us',
 'es-es',
 'es-mx',
@@ -38,19 +41,23 @@ for example:
 ```js
 import { localizeName } from '@mbardakov/localize-names';
 
-console.log(localizeName({
+const nameString = localizeName({
     suffix: 'PhD',
     surname: 'Ham',
     prefix: 'Dr.',
     givenName: 'Harry',
-}, 'en-us'));
+}, 'en-us');
+console.log(nameString);
 
 > 'Dr. Harry Ham, PhD'
 
-console.log(localizeName({
+
+
+const nameString2 = localizeName({
     givenName: '明',
     surname: '张'
-}, 'zh-cn'));
+}, 'zh-cn');
+console.log(nameString2);
 
 > '张明'
 

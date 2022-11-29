@@ -1,9 +1,13 @@
 const givenFirst = ['prefix', 'givenName', 'middleName', 'surname', 'suffix'];
 const surnameFirst = ['surname', 'givenName', 'middleName', 'prefix', 'suffix'];
-const locales = ['ar-sa',
+const locales = [
+	'ar-sa',
 	'cy-gb',
 	'da-dk',
 	'de-de',
+	'en',
+	'en-ca',
+	'en-gb',
 	'en-us',
 	'es-es',
 	'es-mx',
@@ -20,7 +24,7 @@ const locales = ['ar-sa',
 	'zh-tw']
 
 const fieldsOrderMap = (locale) => {
-	switch (locale) {
+	switch (locale.toLowerCase()) {
 		case 'ja-jp':
 		case 'ko-kr':
 		case 'zh-cn':
@@ -34,16 +38,19 @@ const fieldsOrderMap = (locale) => {
 
 const localizeName = (nameBlob, locale) => {
 	const nameAsArray = fieldsOrderMap(locale)
-		.filter(locale => nameBlob[locale])
+		.filter(namePart => nameBlob[namePart])
 		.map(field => processNamePart(nameBlob, field, locale));
 	return postProcessName(nameAsArray, locale);
 }
 
 const processNamePart = (nameBlob, nameSubcomponent, locale) => {
-	switch (locale) {
+	switch (locale.toLowerCase()) {
 		case 'cy-gb':
 		case 'da-dk':
 		case 'de-de':
+		case 'en':
+		case 'en-ca':
+		case 'en-gb':
 		case 'en-us':
 		case 'es-es':
 		case 'es-mx':
@@ -66,7 +73,7 @@ const processNamePart = (nameBlob, nameSubcomponent, locale) => {
 }
 
 const postProcessName = (nameArray, locale) => {
-	switch (locale) {
+	switch (locale.toLowerCase()) {
 		case 'ja-jp':
 		case 'ko-kr':
 		case 'zh-cn':
