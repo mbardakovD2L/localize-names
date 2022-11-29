@@ -2,6 +2,18 @@ import { assert } from 'chai';
 import { localizeName } from '../src/localize-names.js';
 
 describe('localizeName', () => {
+	describe('ar-sa', () => {
+		it('givenName surName', () => {
+			const result = localizeName({
+				givenName: 'فلان',
+				surname: 'الفلاني'
+			}, 'ar-sa');
+			const expected = 'فلان الفلاني';
+
+			assert.equal(result, expected);
+		})
+	});
+
 	describe('cy-gb', () => {
 		it('givenName middleName surName', () => {
 			const result = localizeName({
