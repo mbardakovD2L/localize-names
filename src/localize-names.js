@@ -38,7 +38,7 @@ const fieldsOrderMap = (locale) => {
 
 const localizeName = (nameBlob, locale) => {
 	const nameAsArray = fieldsOrderMap(locale)
-		.filter(namePart => nameBlob[namePart])
+		.filter(field => nameBlob[field])
 		.map(field => processNamePart(nameBlob, field, locale));
 	return postProcessName(nameAsArray, locale);
 }
